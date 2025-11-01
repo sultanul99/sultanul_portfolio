@@ -1,0 +1,166 @@
+/* ===============================
+   Variables & Base
+   =============================== */
+:root{
+  --bg:#0b0f14;
+  --panel:#121824;
+  --muted:#a9b1c3;
+  --text:#e8edf8;
+  --accent:#66e0ff;     /* primary accent (accessible on dark) */
+  --accent-2:#8b5cf6;   /* secondary accent used sparingly */
+  --border: #1e2636;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  color:var(--text);
+  background:linear-gradient(180deg,#0b0f14 0%, #0b0f14 50%, #0e1420 100%);
+}
+
+/* ===============================
+   Layout Utilities
+   =============================== */
+.container{width:min(1100px,92vw); margin-inline:auto;}
+.section{padding:80px 0}
+.section-title{
+  font-size:clamp(1.4rem,2.5vw,2rem);
+  letter-spacing:.3px;
+  margin:0 0 20px;
+}
+.grid{display:grid; gap:20px}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:720px){ .grid.two{grid-template-columns:1fr} }
+.flex-row{display:flex; align-items:center}
+.flex-row.gap{gap:14px}
+.flex-row.between{justify-content:space-between}
+
+/* ===============================
+   Navbar
+   =============================== */
+.site-header{
+  position:sticky; top:0; z-index:40;
+  background:rgba(11,15,20,.75);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+.brand{
+  font-weight:800; font-size:20px; color:var(--text); text-decoration:none;
+  padding:8px 12px; border-radius:12px; background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.nav-links{display:flex; list-style:none; gap:12px; margin:0; padding:0}
+.nav-links a{
+  display:block; padding:8px 12px; border-radius:10px; text-decoration:none; color:var(--text);
+}
+.nav-links a:hover,.nav-links a:focus{background:var(--panel); outline:2px solid transparent}
+.nav-toggle{display:none; font-size:22px; background:none; color:var(--text); border:none}
+@media (max-width:840px){
+  .nav-toggle{display:block}
+  .nav-links{position:fixed; inset:64px 0 auto 0; background:rgba(11,15,20,.98);
+    border-bottom:1px solid var(--border); padding:12px; flex-direction:column; transform:translateY(-120%); transition:.25s}
+  .nav-links.open{transform:translateY(0)}
+}
+
+/* ===============================
+   Hero
+   =============================== */
+.hero{display:grid; gap:18px}
+.hero-content{display:grid; gap:16px}
+.hero-title{font-size:clamp(1.8rem,4.6vw,3rem); margin:0}
+.hero-subtitle{color:var(--muted); line-height:1.6}
+.hero-ctas{display:flex; gap:12px; flex-wrap:wrap}
+.hero-meta{display:grid; gap:6px; padding:0; margin:10px 0 0; list-style:none; color:var(--muted)}
+.hero-chipbar{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+.chip{
+  background:rgba(102,224,255,.12); border:1px solid rgba(102,224,255,.25);
+  color:#d8f6ff; padding:6px 10px; border-radius:999px; font-size:12px;
+}
+.chip.small{padding:4px 8px; font-size:11px}
+
+/* ===============================
+   Cards & Components
+   =============================== */
+.card{
+  background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow);
+}
+.card-h{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:6px}
+.muted{color:var(--muted)}
+
+.btn{
+  --bg:var(--panel); --fg:var(--text); --bd:var(--border);
+  background:var(--bg); color:var(--fg); border:1px solid var(--bd);
+  padding:10px 14px; border-radius:12px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+  transition:transform .08s ease, background .2s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{--bg:linear-gradient(90deg,var(--accent),var(--accent-2)); --fg:#0b0f14; --bd:transparent; font-weight:600}
+.btn.ghost{background:transparent}
+.btn.small{padding:8px 10px; font-size:14px}
+
+/* bullet grid */
+.bullet-grid{display:grid; gap:10px; padding-left:18px}
+.tag-row{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+
+/* projects grid */
+.projects-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:960px){ .projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:640px){ .projects-grid{grid-template-columns:1fr} }
+
+/* artifact layout */
+.artifact-details{display:grid; gap:10px; margin-top:14px}
+.kv{display:grid; gap:16px; grid-template-columns:1fr 1fr}
+.kv h4{margin:.2rem 0}
+.refs{margin:.4rem 0; padding-left:18px}
+@media (max-width:840px){ .kv{grid-template-columns:1fr} }
+
+/* ===============================
+   Modal & Carousel
+   =============================== */
+.modal{
+  position:fixed; inset:0; background:rgba(2,6,14,.75); display:none; place-items:center; padding:24px; z-index:100;
+}
+.modal.open{display:grid}
+.modal-content{
+  width:min(920px,95vw); background:var(--panel); border:1px solid var(--border);
+  border-radius:var(--radius); padding:18px; box-shadow:var(--shadow);
+}
+.modal-close{float:right; font-size:28px; background:none; color:var(--text); border:none; cursor:pointer}
+.carousel{position:relative; margin:12px 0 10px; overflow:hidden; border-radius:12px; border:1px solid var(--border)}
+.carousel-track{display:flex; transition:transform .35s ease}
+.slide{min-width:100%; padding:20px; background:#0c1522}
+.carousel-btn{
+  position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,.35);
+  border:1px solid var(--border); color:var(--text); border-radius:999px; width:40px; height:40px; cursor:pointer;
+}
+.carousel-btn.prev{left:10px}
+.carousel-btn.next{right:10px}
+
+/* ===============================
+   Reveal-on-Scroll
+   =============================== */
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease}
+.reveal.visible{opacity:1; transform:none}
+
+/* ===============================
+   Forms
+   =============================== */
+label{display:grid; gap:6px; font-size:14px}
+input,textarea{
+  background:#0b1322; border:1px solid var(--border); color:var(--text);
+  border-radius:12px; padding:10px 12px; width:100%;
+}
+input:focus,textarea:focus{outline:2px solid var(--accent)}
+.contact-form .btn{margin-left:auto}
+
+/* ===============================
+   Footer
+   =============================== */
+.site-footer{border-top:1px solid var(--border); padding:18px 0; margin-top:30px; background:rgba(11,15,20,.6); backdrop-filter:blur(6px)}
+.foot-grid{display:flex; align-items:center; justify-content:space-between}
+.to-top{color:var(--accent); text-decoration:none}

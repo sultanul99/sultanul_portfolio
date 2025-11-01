@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sultanul Khan — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== Sticky Navbar ===== -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#home" class="brand" aria-label="Go to Home">SK</a>
+      <button class="nav-toggle" aria-label="Open Menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#artifacts">Artifacts</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <main id="home" class="hero section container reveal">
+    <div class="hero-content">
+      <h1 class="hero-title">Md Sultanul Arefin Khan</h1>
+      <p class="hero-subtitle">
+        Software Engineer specializing in scalable backends, real-time data systems, and cloud-native microservices. 
+        Building resilient, high-impact systems for connected platforms and intelligent products.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="Md_Sultanul_Arefin_Khan_Resume.pdf" class="btn ghost" download>Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-chipbar">
+      <span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Kafka</span>
+      <span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">AWS</span>
+      <span class="chip">Python</span><span class="chip">Spark</span><span class="chip">REST APIs</span>
+    </div>
+  </main>
+
+  <!-- ===== Experience ===== -->
+  <section id="experience" class="section container reveal">
+    <h2 class="section-title">Experience</h2>
+    <article class="card">
+      <header class="card-h">
+        <div>
+          <h3>Software Engineer — General Motors (via Emonics LLC)</h3>
+          <p class="muted">Remote • Aug 2022 – Present</p>
+        </div>
+      </header>
+      <ul class="bullet-grid">
+        <li>Launched vehicle-connected features adopted by <strong>10M+ OnStar users</strong> (Lyriq, Hummer, Cruise), supporting <strong>$300M+</strong> in initial sales.</li>
+        <li>Built predictive maintenance, remote lock/unlock, and emergency alert microservices for <strong>60M+ vehicles</strong>.</li>
+        <li>Re-platformed legacy monoliths to microservices using <strong>Spring Boot</strong>, <strong>Kafka</strong>, <strong>Docker</strong>, <strong>Kubernetes</strong> → <strong>5× faster deployments</strong>.</li>
+        <li>Optimized REST APIs (OAuth2-secured) reducing latency <strong>300ms → 150ms</strong> across telematics endpoints.</li>
+        <li>Refactored Spark pipelines reducing cluster resource usage by <strong>25%</strong> → saving <strong>$10K/month</strong>.</li>
+        <li>Integrated CRM data via Kafka-REST to Salesforce, improving scheduling efficiency by <strong>30%</strong>.</li>
+      </ul>
+      <footer class="tag-row">
+        <span class="chip small">Java</span><span class="chip small">Spring Boot</span>
+        <span class="chip small">Kafka</span><span class="chip small">Docker</span>
+        <span class="chip small">Kubernetes</span><span class="chip small">Spark</span>
+        <span class="chip small">AWS</span><span class="chip small">OAuth2/JWT</span>
+      </footer>
+    </article>
+  </section>
+
+  <!-- ===== Education ===== -->
+  <section id="education" class="section container reveal">
+    <h2 class="section-title">Education</h2>
+    <article class="card">
+      <header class="card-h">
+        <h3>Georgia State University — B.S. in Computer Science</h3>
+        <p class="muted">Atlanta, GA • Aug 2018 – May 2022 • GPA 3.82 • Magna Cum Laude</p>
+      </header>
+      <p class="muted">
+        Relevant Coursework: Software Engineering, Data Structures, OS, Database Systems, Algorithms, Machine Learning, Cloud Computing.
+      </p>
+    </article>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects" class="section container reveal">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="grid projects-grid">
+      <article class="card project" data-project="park">
+        <h3>Online Park Ticketing System</h3>
+        <p class="muted">Java • Spring Boot • Angular • AWS</p>
+        <ul class="bullet-grid">
+          <li>Secure JWT login, role-based access control, and integrated Google Calendar for park reservations.</li>
+          <li>Containerized microservices and deployed to AWS Elastic Beanstalk with Jenkins CI/CD.</li>
+          <li>Improved API throughput by 35% and response times by 200ms.</li>
+        </ul>
+        <button class="btn small primary open-modal" data-project="park">View Details</button>
+      </article>
+
+      <article class="card project" data-project="movie">
+        <h3>Movie Rating & Recommendation App</h3>
+        <p class="muted">Python • Flask • React • PostgreSQL</p>
+        <ul class="bullet-grid">
+          <li>Built hybrid recommender combining collaborative & content-based filtering with Surprise library.</li>
+          <li>Created secure Flask APIs with JWT and React frontend featuring async pagination.</li>
+          <li>Reduced load latency by 150ms and increased accuracy by 12%.</li>
+        </ul>
+        <button class="btn small primary open-modal" data-project="movie">View Details</button>
+      </article>
+
+      <article class="card project" data-project="expense">
+        <h3>Expense Tracker Platform</h3>
+        <p class="muted">AWS • Node.js • React • Prisma ORM</p>
+        <ul class="bullet-grid">
+          <li>Built cloud-native expense tracking system syncing live bank transactions via OAuth2 APIs.</li>
+          <li>AI-driven budgeting rules with AWS Lambda and SNS alerts; CloudWatch for observability.</li>
+          <li>Reduced data ingestion latency by 40% and AWS resource cost by 25%.</li>
+        </ul>
+        <button class="btn small primary open-modal" data-project="expense">View Details</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Artifacts ===== -->
+  <section id="artifacts" class="section container reveal">
+    <h2 class="section-title">Artifacts</h2>
+
+    <div class="card">
+      <a class="btn primary" href="https://chatgpt.com/canvas/shared/68fd2d9db15081918ee62f279935b091" target="_blank" rel="noreferrer">
+        Visit Artifact
+      </a>
+
+      <div class="artifact-details" style="margin-top: 20px;">
+        <p><strong>Title:</strong> AI Timeline: 1950 – Gemini 2 Launch</p>
+        <p><strong>Introduction:</strong> This visual representation highlights major breakthroughs in AI from 1950 to the launch of Gemini 2 by Google.</p>
+        <p><strong>Description:</strong> This visual timeline presents beautiful and accurate information on major AI breakthroughs from the 1950s, starting with Alan Turing’s Turing Test and culminating in the launch of Gemini 2, which is Google's DeepMind project that integrated multimodal abilities in AI.</p>
+        <p><strong>Objective:</strong> The objective of this representation is to present the viewer with accurate information about AI breakthroughs in a user-friendly and visually appealing format that is easy to navigate.</p>
+        <p><strong>Process:</strong> Accurate, detailed prompts were utilized to generate valid information from verifiable sources and design the layout and colors of the visual representation.</p>
+        <p><strong>Tools and Technologies Used:</strong> ChatGPT</p>
+
+        <h3 style="margin-top:20px;">Value Proposition</h3>
+        <p><strong>Unique Value:</strong> Visually Appealing Design that grabs viewers' attention and helps them engage with the content. It features interactive navigation, allowing users to scroll horizontally and read brief descriptions of each breakthrough. It contains valid information presented in chronological order, allowing the user to easily follow the development of AI over the years.</p>
+        <p><strong>Relevance:</strong> This is relevant for educator and students for learning. Professionals to present information about AI in the workplace. For the general public to gain general knowledge about AI.</p>
+
+        <h3 style="margin-top:20px;">References:</h3>
+        <ul style="padding-left:20px;line-height:1.6;">
+          <li>Amazon Web Services. (2025, January 7). AWS investment in Georgia for AI infrastructure. Reuters. <a href="https://www.reuters.com/technology/artificial-intelligence/amazon-says-aws-plans-invest-least-11-bln-georgia-ai-infrastructure-2025-01-07/" target="_blank">Link</a></li>
+          <li>Buchanan, B. G., & Shortliffe, E. H. (1984). Rule-based expert systems. Addison-Wesley.</li>
+          <li>Campbell, M., Hoane, A. J., & Hsu, F. (2002). Deep Blue. Artificial Intelligence, 134(1–2), 57–83.</li>
+          <li>Crevier, D. (1993). AI: The tumultuous history of the search for artificial intelligence. Basic Books.</li>
+          <li>DeepMind. (2023). Introducing Gemini 1. Google DeepMind Blog.</li>
+          <li>DeepMind. (2024). RoboCat. DeepMind Research.</li>
+          <li>DeepMind. (2024, December). Gemini 2. Google DeepMind Blog.</li>
+          <li>General Motors. (1961). Unimate robot arm deployed at GM plant. Unimation Inc.</li>
+          <li>Goodfellow et al. (2014). Generative adversarial nets. NeurIPS, 27.</li>
+          <li>Hendler, J. (2008). Avoiding another AI winter. IEEE Intelligent Systems, 23(2).</li>
+          <li>Krizhevsky et al. (2012). ImageNet classification. NeurIPS, 25.</li>
+          <li>McCarthy et al. (1956). Dartmouth proposal on artificial intelligence. Dartmouth College.</li>
+          <li>Nilsson, N. (1984). Shakey the robot. SRI International.</li>
+          <li>OpenAI. (2015). OpenAI Charter and mission statement.</li>
+          <li>OpenAI. (2022). ChatGPT model card and technical report.</li>
+          <li>Russell, S., & Norvig, P. (2003). Artificial intelligence: A modern approach (2nd ed.). Prentice Hall.</li>
+          <li>Silver et al. (2016). Mastering the game of Go. Nature, 529(7587).</li>
+          <li>Turing, A. M. (1950). Computing machinery and intelligence. Mind, 59(236).</li>
+          <li>Weizenbaum, J. (1966). ELIZA—A computer program for the study of natural language. CACM, 9(1).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="section container reveal">
+    <h2 class="section-title">Contact</h2>
+
+    <div class="card" style="text-align:center;">
+      <p><strong>Location:</strong> Conyers, GA</p>
+      <div class="flex-row gap" style="justify-content:center; flex-wrap:wrap; margin-top:16px;">
+        <a href="mailto:sultan.arefin99@gmail.com" class="btn primary" title="Send Email">✉️ Email</a>
+        <a href="tel:+14709740705" class="btn ghost" title="Call Sultanul">📞 Phone</a>
+        <a href="https://www.linkedin.com/in/sultanulkhan" target="_blank" class="btn primary" title="LinkedIn Profile">💼 LinkedIn</a>
+        <a href="http://www.sultanulkhan.com" target="_blank" class="btn ghost" title="Personal Website">🌐 Website</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Modal & Footer ===== -->
+  <div id="projectModal" class="modal" aria-hidden="true" aria-labelledby="modalTitle" aria-modal="true" role="dialog">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">×</button>
+      <h3 id="modalTitle">Project</h3>
+      <p class="muted" id="modalStack"></p>
+      <div class="carousel">
+        <button class="carousel-btn prev" aria-label="Previous slide">‹</button>
+        <div class="carousel-track" id="carouselTrack"></div>
+        <button class="carousel-btn next" aria-label="Next slide">›</button>
+      </div>
+      <ul class="modal-points" id="modalPoints"></ul>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container foot-grid">
+      <span>© <span id="year"></span> Sultanul Khan</span>
+      <a href="#home" class="to-top" aria-label="Back to top">↑</a>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
